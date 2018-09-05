@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRpb.setCurrentProgress(100);
         //设置最大进度
         mRpb.setMaxProgress(100);
+        //开启渐变特效
+        mRpb.setArgbColor(true);
 
         //进度小圆的颜色
 //        mRpb.setProgressCircleColor();

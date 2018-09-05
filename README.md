@@ -27,8 +27,7 @@
                       android:id="@+id/rpb"
                       android:layout_marginTop="100dp"
                       android:layout_width="200dp"
-                      android:layout_height="200dp"
-                      app:progressArgbColor="true" />
+                      android:layout_height="200dp" />
                     
 * step 4.添加代码
 
@@ -37,6 +36,8 @@
          rpb.setCurrentProgress(100);
          //设置最大进度
          rpb.setMaxProgress(100);
+         //true为开始渐变特效，false则关闭
+         rpb.setArgbColor(true);
          
 
 ## 自定义属性说明
