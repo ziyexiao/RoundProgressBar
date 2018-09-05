@@ -24,14 +24,7 @@
                       android:layout_marginTop="100dp"
                       android:layout_width="200dp"
                       android:layout_height="200dp"
-                      android:layout_centerHorizontal="true"
-                      app:secondTextSize="45sp"
-                      app:thirdText="kg"
-                      app:topText="体重"
-                      app:topTextSize="16sp"
-                      app:animationDuration="1500"
-                      app:progressArgbColor="true"
-                      app:thirdTextSize="16sp" />
+                      app:progressArgbColor="true" />
                     
 * step 4.添加代码
 
@@ -60,6 +53,9 @@
 >11. **circleThickness**：圆环宽度
 >12. **progressStartColor**：圆弧渐变开始颜色
 >13. **progressEndColor**：圆弧渐变结束颜色
+
+
+**博客地址：** [https://blog.csdn.net/ziyexiaoxiao/article/details/82421854](https://blog.csdn.net/ziyexiaoxiao/article/details/82421854)
 
 
        

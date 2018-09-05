@@ -40,9 +40,9 @@ public class RoundProgressBar extends View {
     //当前的进度，默认0
     private double currentProgress = 0.0;
     //第一行的字
-    private String topText;
+    private String topText = "体重";
     //第三行字
-    private String thirdText;
+    private String thirdText = "kg";
     //最上面的字的大小
     private float topTextSize;
     //第二行字的大小
@@ -88,20 +88,26 @@ public class RoundProgressBar extends View {
 
         circleThickness = typedArray.getDimension(R.styleable.RoundProgressBar_circleThickness, PixeUtils.dip2px(context, 12));
 
-
         topTextColor = typedArray.getColor(R.styleable.RoundProgressBar_topTextColor, Color.BLACK);
         secondTextColor = typedArray.getColor(R.styleable.RoundProgressBar_secondTextColor, Color.BLACK);
         thirdTextColor = typedArray.getColor(R.styleable.RoundProgressBar_thirdTextColor, Color.BLACK);
 
         maxProgress = typedArray.getInt(R.styleable.RoundProgressBar_maxProgress, 100);
         animationDuration = typedArray.getInt(R.styleable.RoundProgressBar_animationDuration, 1000);
+        String defaultTopText = typedArray.getString(R.styleable.RoundProgressBar_topText);
 
-        topText = typedArray.getString(R.styleable.RoundProgressBar_topText);
-        thirdText = typedArray.getString(R.styleable.RoundProgressBar_thirdText);
+        if (defaultTopText != null) {
+            topText = defaultTopText;
+        }
 
-        topTextSize = typedArray.getDimension(R.styleable.RoundProgressBar_topTextSize, 24);
-        secondTextSize = typedArray.getDimension(R.styleable.RoundProgressBar_secondTextSize, 40);
-        thirdTextSize = typedArray.getDimension(R.styleable.RoundProgressBar_thirdTextSize, 24);
+        String defaultThirdText  = typedArray.getString(R.styleable.RoundProgressBar_thirdText);
+        if (defaultThirdText != null) {
+            thirdText = defaultThirdText;
+        }
+
+        topTextSize = typedArray.getDimension(R.styleable.RoundProgressBar_topTextSize, PixeUtils.sp2px(context, 16));
+        secondTextSize = typedArray.getDimension(R.styleable.RoundProgressBar_secondTextSize, PixeUtils.sp2px(context, 45));
+        thirdTextSize = typedArray.getDimension(R.styleable.RoundProgressBar_thirdTextSize, PixeUtils.sp2px(context, 16));
 
         //控制颜色渐变的开关
         argbColor = typedArray.getBoolean(R.styleable.RoundProgressBar_progressArgbColor, false);
