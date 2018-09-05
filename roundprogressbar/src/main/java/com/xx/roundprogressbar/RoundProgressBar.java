@@ -33,7 +33,7 @@ public class RoundProgressBar extends View {
     private int thirdTextColor;
     //RoundProgress开始的颜色，决定RoundProgress的渐变区间
     private int progressStartColor;
-    //RoundProgress结束的颜色
+    //RoundProgress结束的颜色，决定RoundProgress的渐变区间
     private int ProgressEndColor;
     //进度的最大值，默认是1000
     private double maxProgress = 1000.0;
