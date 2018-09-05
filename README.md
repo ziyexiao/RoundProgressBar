@@ -14,7 +14,7 @@
 * Step 2. Add the dependency
 
 	    dependencies {
-	        implementation 'com.github.ziyexiao:RoundProgressBar:1.0.1'
+	        implementation 'com.github.ziyexiao:RoundProgressBar:1.0.2'
 	    }
 	    
 * step 3.在XML布局文件中添加 RoundProgressBar
