@@ -29,12 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //设置修改进度后的动画时长，默认时长为1000
         //如果想要初始化也奏效，则需要在设置当前进度和最大进度之前
         mRpb.setAnimationDuration(1500);
-
         //设置当前进度
         mRpb.setCurrentProgress(100);
         //设置最大进度
         mRpb.setMaxProgress(100);
-
 
         //进度小圆的颜色
 //        mRpb.setProgressCircleColor();
