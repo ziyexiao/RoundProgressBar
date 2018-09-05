@@ -54,7 +54,6 @@ public class RoundProgressBar extends View {
     //动画时长，默认时长为1000
     private long animationDuration;
 
-
     //文字颜色是否argb变化
     private boolean argbColor;
 
@@ -94,12 +93,15 @@ public class RoundProgressBar extends View {
 
         maxProgress = typedArray.getInt(R.styleable.RoundProgressBar_maxProgress, 100);
         animationDuration = typedArray.getInt(R.styleable.RoundProgressBar_animationDuration, 1000);
-        String defaultTopText = typedArray.getString(R.styleable.RoundProgressBar_topText);
 
+        //设置第一行文字的默认文字
+        String defaultTopText = typedArray.getString(R.styleable.RoundProgressBar_topText);
         if (defaultTopText != null) {
             topText = defaultTopText;
         }
 
+
+        //设置第三行文字的默认文字
         String defaultThirdText  = typedArray.getString(R.styleable.RoundProgressBar_thirdText);
         if (defaultThirdText != null) {
             thirdText = defaultThirdText;

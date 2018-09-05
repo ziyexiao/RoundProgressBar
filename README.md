@@ -41,7 +41,22 @@
 
 ## 自定义属性说明
 
->1. **argbColor**：是否进行颜色渐变变化（如果设置为true的话，则文字颜色与进度条颜色都会设置无效）
+|属性|属性说明|默认值|
+|:--:|:--:|:--:|
+|argbColor|是否进行颜色argb变化（如果设置为true的话，则文字颜色与进度条颜色进行argb变化，并且单独给文字或进度条设置颜色将会无效）|false|
+|topText|第一行文本|体重|
+|topTextSize|第一行文本大小|16sp|
+|secondTextSize|中间文本文本大小（进度）|16sp|
+|thirdText|第三行文本|kg|
+|animationDuration|修改当前进度后执行的动画时长|1000ms|
+|currentProgress|当前进度|0.0|
+|maxProgress|最大进度|1000.0|
+|circleColor|圆环底色|#FFE4E4E4|
+|circleThickness|圆环宽度|12dp|
+|progressStartColor|圆弧渐变开始颜色|#F1E134|
+|progressEndColor|圆弧渐变结束颜色|#F14A34|
+
+>1. **argbColor**：是否进行颜色argb变化（如果设置为true的话，则文字颜色与进度条颜色进行argb变化，并且单独给文字或进度条设置颜色将会无效）
 >2. **topText**：第一行文本
 >3. **topTextSize**：第一行文本大小
 >4. **secondTextSize**：中间文本文本大小（进度大小）
