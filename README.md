@@ -6,7 +6,7 @@
 ![效果图](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/xF3UHkspNPUm4kCY70ABO3leri2yTmKguFV0d2VvafE!/b/dFkAAAAAAAAA&bo=aAGAAmgBgAICOR0!&rf=viewer_4)
 
 ## 简单使用
-* Step 1. Add the JitPack repository to your build file in your root build.gradle at the end of repositories:
+* Step 1. 添加如下代码至project的build.gradle里:
 
 	    allprojects {
 	    	repositories {
@@ -15,7 +15,7 @@
 		    }
 	    }
 	
-* Step 2. Add the dependency
+* Step 2. 添加依赖
 
 	    dependencies {
 	        implementation 'com.github.ziyexiao:RoundProgressBar:1.0.2'
@@ -39,7 +39,7 @@
          rpb.setMaxProgress(100);
          
 
-## 参数说明
+## 自定义属性说明
 
 >1. **argbColor**：是否进行颜色渐变变化（如果设置为true的话，则文字颜色与进度条颜色都会设置无效）
 >2. **topText**：第一行文本
