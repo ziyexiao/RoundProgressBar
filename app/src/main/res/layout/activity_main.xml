@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xx.MainActivity">
+
+
+        <com.xx.roundprogressbar.RoundProgressBar
+            android:id="@+id/rpb"
+            android:layout_marginTop="100dp"
+
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            app:secondTextSize="45sp"
+            app:thirdText="kg"
+            app:thirdTextSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_top"
+                android:padding="20dp"
+                android:layout_below="@id/rpb"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_round_progress"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/et_round_progress_shape"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="@string/_75" />
+
+                <Button
+                    android:id="@+id/btn_change"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/btn_main_selector"
+                    android:text="@string/change"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+</RelativeLayout>
