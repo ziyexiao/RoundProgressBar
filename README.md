@@ -1,6 +1,10 @@
 # RoundProgressBar
 一个自定义的圆形ProgressBar
 
+### 效果图
+
+![效果图](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/xF3UHkspNPUm4kCY70ABO3leri2yTmKguFV0d2VvafE!/b/dFkAAAAAAAAA&bo=aAGAAmgBgAICOR0!&rf=viewer_4)
+
 ## 简单使用
 * Step 1. Add the JitPack repository to your build file in your root build.gradle at the end of repositories:
 
@@ -34,9 +38,6 @@
          //设置最大进度
          rpb.setMaxProgress(100);
          
-### 效果图
-
-![效果图](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/xF3UHkspNPUm4kCY70ABO3leri2yTmKguFV0d2VvafE!/b/dFkAAAAAAAAA&bo=aAGAAmgBgAICOR0!&rf=viewer_4)
 
 ## 参数说明
 
