@@ -23,6 +23,7 @@ public class RoundProgressBar extends View {
     private int circleColor;
     //圆环进度的颜色
     private int progressCircleColor;
+
     //圆环的厚度，即大小
     private float circleThickness;
     //最上面字体的颜色
@@ -31,12 +32,15 @@ public class RoundProgressBar extends View {
     private int secondTextColor;
     //第三行字体的颜色
     private int thirdTextColor;
+
+    //小圆颜色
+    private int smallCircleColor;
     //RoundProgress开始的颜色，决定RoundProgress的渐变区间
     private int progressStartColor;
     //RoundProgress结束的颜色，决定RoundProgress的渐变区间
     private int ProgressEndColor;
     //进度的最大值，默认是1000
-    private double maxProgress = 1000.0;
+    private double maxProgress = 100.0;
     //当前的进度，默认0
     private double currentProgress = 0.0;
     //第一行的字
@@ -55,7 +59,7 @@ public class RoundProgressBar extends View {
     private long animationDuration;
 
     //文字颜色是否argb变化
-    private boolean argbColor;
+    private boolean progressArgbColor;
 
     private int center;
 
@@ -85,11 +89,13 @@ public class RoundProgressBar extends View {
         progressStartColor = typedArray.getColor(R.styleable.RoundProgressBar_progressStartColor, getResources().getColor(R.color.progress_start));
         ProgressEndColor = typedArray.getColor(R.styleable.RoundProgressBar_progressEndColor, getResources().getColor(R.color.progress_end));
 
-        circleThickness = typedArray.getDimension(R.styleable.RoundProgressBar_circleThickness, PixeUtils.dip2px(context, 12));
+        circleThickness = typedArray.getDimension(R.styleable.RoundProgressBar_circleThickness, PixeUtils.dip2px(context, 10));
 
         topTextColor = typedArray.getColor(R.styleable.RoundProgressBar_topTextColor, Color.BLACK);
         secondTextColor = typedArray.getColor(R.styleable.RoundProgressBar_secondTextColor, Color.BLACK);
         thirdTextColor = typedArray.getColor(R.styleable.RoundProgressBar_thirdTextColor, Color.BLACK);
+
+        smallCircleColor = typedArray.getColor(R.styleable.RoundProgressBar_smallCircleColor, Color.WHITE);
 
         maxProgress = typedArray.getInt(R.styleable.RoundProgressBar_maxProgress, 100);
         animationDuration = typedArray.getInt(R.styleable.RoundProgressBar_animationDuration, 1000);
@@ -112,7 +118,7 @@ public class RoundProgressBar extends View {
         thirdTextSize = typedArray.getDimension(R.styleable.RoundProgressBar_thirdTextSize, PixeUtils.sp2px(context, 16));
 
         //控制颜色渐变的开关
-        argbColor = typedArray.getBoolean(R.styleable.RoundProgressBar_progressArgbColor, false);
+        progressArgbColor = typedArray.getBoolean(R.styleable.RoundProgressBar_progressArgbColor, false);
 
         typedArray.recycle();
     }
@@ -159,10 +165,11 @@ public class RoundProgressBar extends View {
             Y = (float) (center - Math.cos(hudu) * outerFirstCircleRadius);
         }
 
-        paint.setColor(getResources().getColor(R.color.white));
+        paint.setColor(smallCircleColor);
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleThickness / 2 + 1);
+
 
         canvas.drawCircle(X, Y, circleThickness / 4, paint);
     }
@@ -258,7 +265,7 @@ public class RoundProgressBar extends View {
     private void drawArcByColor(Canvas canvas, RectF oval2, double progress) {
         for (int i = 0; i < progress / maxProgress * 360; i++) {
             //颜色渐变
-            if (argbColor) {        //如果颜色渐变， 则改变色值
+            if (progressArgbColor) {        //如果颜色渐变， 则改变色值
                 progressCircleColor = (Integer) mArgbEvaluator.evaluate(i / 360f, progressStartColor, ProgressEndColor);//颜色插值器（level 11以上才可以用）
                 secondTextColor = progressCircleColor;
                 topTextColor = progressCircleColor;
@@ -299,10 +306,13 @@ public class RoundProgressBar extends View {
      * @param maxProgress  最大进度
      */
     public void setMaxProgress(double maxProgress) {
+
         if (maxProgress < 0) {
             this.maxProgress = 0;
         }
         this.maxProgress = maxProgress;
+
+        setAnimation(0, currentProgress);
     }
 
 
@@ -339,7 +349,7 @@ public class RoundProgressBar extends View {
     private void setAnimation(double start, double end) {
         ValueAnimator progressAnimator = ValueAnimator.ofFloat((float) start, (float) end);
         progressAnimator.setDuration(animationDuration);
-        progressAnimator.setTarget(currentProgress);
+        progressAnimator.setTarget(start);
 
         progressAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -359,10 +369,11 @@ public class RoundProgressBar extends View {
 
     /**
      * 文字是否argb变化
-     * @param argbColor 是或否
+     * @param progressArgbColor 是或否
      */
-    public void setArgbColor(boolean argbColor) {
-        this.argbColor = argbColor;
+    public void setProgressArgbColor(boolean progressArgbColor) {
+        this.progressArgbColor = progressArgbColor;
+        invalidate();
     }
 
 
@@ -421,6 +432,28 @@ public class RoundProgressBar extends View {
      */
     public void setAnimationDuration(long animationDuration) {
         this.animationDuration = animationDuration;
+
+        setAnimation(0, currentProgress);
+    }
+
+
+    /**
+     * 圆环厚度
+     * @param circleThickness  厚度
+     */
+    public void setCircleThickness(float circleThickness) {
+
+        this.circleThickness = circleThickness;
+        invalidate();
+    }
+
+    /**
+     * 设置小圆颜色
+     * @param smallCircleColor
+     */
+    public void setSmallCircleColor(int smallCircleColor) {
+        this.smallCircleColor = smallCircleColor;
+        invalidate();
     }
 
 }

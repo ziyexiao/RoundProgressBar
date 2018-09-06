@@ -1,6 +1,8 @@
 # RoundProgressBar
 一个自定义的圆形ProgressBar
 
+[![](https://jitpack.io/v/ziyexiao/RoundProgressBar.svg)](https://jitpack.io/#ziyexiao/RoundProgressBar)
+
 ### 效果图
 
 ![效果图](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/xF3UHkspNPUm4kCY70ABO3leri2yTmKguFV0d2VvafE!/b/dFkAAAAAAAAA&bo=aAGAAmgBgAICOR0!&rf=viewer_4)
@@ -18,7 +20,7 @@
 * Step 2. 添加依赖
 
 	    dependencies {
-	        implementation 'com.github.ziyexiao:RoundProgressBar:1.0.2'
+	        implementation 'com.github.ziyexiao:RoundProgressBar:1.0.3'
 	    }
 	    
 * step 3.在XML布局文件中添加 RoundProgressBar
@@ -44,7 +46,7 @@
 
 |属性|属性说明|类型|默认值|
 |:--:|:--:|:--:|:--:|
-|argbColor|是否进行颜色argb变化（如果设置为true的话，则文字颜色与进度条颜色进行argb变化，并且单独给文字或进度条设置颜色将会无效）|boolean|false|
+|progressArgbColor|是否进行颜色argb变化（如果设置为true的话，则文字颜色与进度条颜色进行argb变化，并且单独给文字或进度条设置颜色将会无效）|boolean|false|
 |topText|第一行文本|string|体重|
 |topTextSize|第一行文本大小|dimension|16sp|
 |secondTextSize|中间文本文本大小（进度）|dimension|16sp|
@@ -53,10 +55,10 @@
 |currentProgress|当前进度|integer|0|
 |maxProgress|最大进度|integer|1000|
 |circleColor|圆环底色|color|#FFE4E4E4|
-|circleThickness|圆环宽度|dimension|12dp|
+|circleThickness|圆环宽度|dimension|10dp|
 |progressStartColor|圆弧渐变开始颜色|color|#F1E134|
 |progressEndColor|圆弧渐变结束颜色|color|#F14A34|
-
+|smallCircleColor|进度小圆的颜色|color|#FFFFFF|
 
 
 **博客地址：** [https://blog.csdn.net/ziyexiaoxiao/article/details/82421854](https://blog.csdn.net/ziyexiaoxiao/article/details/82421854)

@@ -1,47 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.xx.MainActivity">
 
         <com.xx.roundprogressbar.RoundProgressBar
             android:id="@+id/rpb"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="30dp"
             android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            app:progressArgbColor="true" />
+            android:layout_gravity="center_horizontal"
+            android:layout_height="200dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ll_top"
                 android:padding="20dp"
-                android:layout_below="@id/rpb"
-                android:layout_centerHorizontal="true"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/et_round_progress"
-                    android:layout_width="60dp"
-                    android:layout_height="30dp"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:layout_centerVertical="true"
+                        android:text="@string/progressargbcolor"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/cb_arg_color"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorAccent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/currentprogress"
+                        android:textColor="@color/colorAccent"
+                        android:layout_height="wrap_content" />
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bsb_current"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="15dp"
+                        app:bsb_show_section_mark="true"
+                        app:bsb_second_track_color="@color/progress_end"
+                        app:bsb_is_float_type="true"
+                        app:bsb_progress="0"
+                        app:bsb_max="100.0"
+                        app:bsb_section_count="1"
+                        app:bsb_show_section_text="true"
+                        app:bsb_show_thumb_text="true"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorAccent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/maxprogress"
                     android:textColor="@color/colorAccent"
-                    android:background="@drawable/et_round_progress_shape"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:text="@string/_75" />
+                    android:layout_height="wrap_content" />
 
-                <Button
-                    android:id="@+id/btn_change"
-                    android:layout_width="60dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="40dp"
-                    android:background="@drawable/btn_main_selector"
-                    android:text="@string/change"
-                    android:textColor="#FFFFFF" />
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bsb_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="15dp"
+                    app:bsb_min="100"
+                    app:bsb_max="500"
+                    app:bsb_section_text_position="below_section_mark"
+
+                    app:bsb_section_count="4"
+                    app:bsb_touch_to_seek="true"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_second_track_color="@color/progress_end"
+                    app:bsb_show_section_text="true"
+                    app:bsb_show_thumb_text="true"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorAccent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/animationduration"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content" />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bsb_duration"
+                    app:bsb_min="0"
+                    app:bsb_max="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="15dp"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_section_count="10"
+                    app:bsb_second_track_color="@color/progress_end"
+                    app:bsb_touch_to_seek="true"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:bsb_section_text_position="below_section_mark"
+                    app:bsb_show_thumb_text="true"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorAccent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/circlethickness"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content" />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bsb_circleThickness"
+                    app:bsb_min="1"
+                    app:bsb_max="15"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="15dp"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_second_track_color="@color/progress_end"
+                    app:bsb_touch_to_seek="true"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_section_count="14"
+                    app:bsb_progress="10"
+                    app:bsb_show_section_text="true"
+                    app:bsb_section_text_position="below_section_mark"
+                    app:bsb_show_thumb_text="true"/>
 
             </LinearLayout>
-
-</RelativeLayout>
+    </ScrollView>
+</LinearLayout>

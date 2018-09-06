@@ -2,4 +2,9 @@
     <string name="app_name">RoundProgressBar</string>
     <string name="_75">75</string>
     <string name="change">修改</string>
+    <string name="currentprogress">currentProgress(当前进度)：</string>
+    <string name="maxprogress">maxProgress(最大进度)：</string>
+    <string name="animationduration">animationDuration(动画时长)：(s)</string>
+    <string name="progressargbcolor">progressArgbColor(是否有渐变效果)：</string>
+    <string name="circlethickness">circleThickness(RoundProgressBar宽度)：(dp)</string>
 </resources>
