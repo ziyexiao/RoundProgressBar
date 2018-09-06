@@ -56,7 +56,7 @@
 |circleColor|圆环底色|color|#FFE4E4E4|
 |circleThickness|圆环宽度|dimension|10dp|
 |progressStartColor|圆弧渐变开始颜色|color|#F1E134|
-|progressEndColor|圆弧渐变结束颜色|color|#F14A34|
+|progressEndColor|圆弧渐变结束颜色(达到maxProgress)|color|#F14A34|
 |smallCircleColor|进度小圆的颜色|color|#FFFFFF|
 
 
