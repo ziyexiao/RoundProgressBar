@@ -5,7 +5,7 @@
 
 ### 效果图
 
-![效果图](https://img-blog.csdn.net/20180906124432826?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ppeWV4aWFveGlhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+[点击查看gif效果图](https://img-blog.csdn.net/20180906124432826?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ppeWV4aWFveGlhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ## 简单使用
 * Step 1. 添加如下代码至project的build.gradle里:
