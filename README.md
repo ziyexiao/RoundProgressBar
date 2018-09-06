@@ -7,7 +7,7 @@
 
 ![](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/.I*Fc.mWV1sIbqUDGfxTWrJNsjVKubb9ISbLNPcuAuc!/b/dFQBAAAAAAAA&bo=OATdAjgE3QIDByI!&rf=viewer_4)
 
-[点击查看gif效果图](https://img-blog.csdn.net/20180906124432826?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ppeWV4aWFveGlhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+[点击查看gif效果图](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/*Ip3vrEwLSTy7vIl.vnw2xnSxpKl4j48W*r2OIQ9btc!/b/dFIBAAAAAAAA&bo=aAGAAgAAAAACh0g!&rf=viewer_4)
 
 ## 简单使用
 * Step 1. 添加如下代码至project的build.gradle里:
