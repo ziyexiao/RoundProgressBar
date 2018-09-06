@@ -5,7 +5,7 @@
 
 ### 效果图
 
-![效果图](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/xF3UHkspNPUm4kCY70ABO3leri2yTmKguFV0d2VvafE!/b/dFkAAAAAAAAA&bo=aAGAAmgBgAICOR0!&rf=viewer_4)
+![效果图](https://img-blog.csdn.net/20180906124432826?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ppeWV4aWFveGlhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ## 简单使用
 * Step 1. 添加如下代码至project的build.gradle里:
@@ -27,7 +27,6 @@
 
           <com.xx.roundprogressbar.RoundProgressBar
                       android:id="@+id/rpb"
-                      android:layout_marginTop="100dp"
                       android:layout_width="200dp"
                       android:layout_height="200dp" />
                     
@@ -38,8 +37,6 @@
          rpb.setCurrentProgress(100);
          //设置最大进度
          rpb.setMaxProgress(100);
-         //true为开始渐变特效，false则关闭
-         rpb.setArgbColor(true);
          
 
 ## 自定义属性说明
