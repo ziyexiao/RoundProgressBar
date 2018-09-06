@@ -3,7 +3,9 @@
 
 [![](https://jitpack.io/v/ziyexiao/RoundProgressBar.svg)](https://jitpack.io/#ziyexiao/RoundProgressBar)
 
-### 效果图
+## 效果图
+
+![](http://m.qpic.cn/psb?/V14Ej48r2rOT1E/aDa3ovrKl2xWwSPJD7H2mbMcZqAVb*DNrXTzRILv1bk!/b/dDQBAAAAAAAA&bo=OASABzgEgAcDCSw!&rf=viewer_4)
 
 [点击查看gif效果图](https://img-blog.csdn.net/20180906124432826?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ppeWV4aWFveGlhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
@@ -50,7 +52,7 @@
 |thirdText|第三行文本|string|kg|
 |animationDuration|修改当前进度后执行的动画时长|integer|1000ms|
 |currentProgress|当前进度|integer|0|
-|maxProgress|最大进度|integer|1000|
+|maxProgress|最大进度|integer|100|
 |circleColor|圆环底色|color|#FFE4E4E4|
 |circleThickness|圆环宽度|dimension|10dp|
 |progressStartColor|圆弧渐变开始颜色|color|#F1E134|

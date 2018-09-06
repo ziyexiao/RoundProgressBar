@@ -14,7 +14,7 @@ import com.xx.roundprogressbar.RoundProgressBar;
 public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnProgressChangedListener {
     private RoundProgressBar mRpb;
     private BubbleSeekBar mBsbCurrent;
-    private int CURRENT = 100;
+    private static final int CURRENT = 100;
     private BubbleSeekBar mBsbDuration;
     private BubbleSeekBar mBsbMax;
     private CheckBox mCbArgbColor;
@@ -43,18 +43,6 @@ public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnP
         mRpb.setCurrentProgress(CURRENT);
         //设置最大进度
         mRpb.setMaxProgress(100);
-
-        //设置当前的位置
-        mBsbCurrent.getConfigBuilder().progress(CURRENT).build();
-        mBsbDuration.getConfigBuilder().progress(1).build();
-
-
-        //进度小圆的颜色
-//        mRpb.setProgressCircleColor();
-        //圆弧开始渐变的颜色
-//        mRpb.setProgressStartColor();
-        //圆弧结束渐变的颜色
-//        mRpb.setProgressEndColor();
 
 
         initListener();
