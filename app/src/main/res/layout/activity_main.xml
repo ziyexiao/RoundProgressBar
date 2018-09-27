@@ -52,6 +52,34 @@
                     android:layout_marginBottom="10dp"
                     android:background="@color/colorAccent"/>
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:layout_centerVertical="true"
+                        android:text="@string/smallcircleenable"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:checked="true"
+                        android:id="@+id/cb_small_circle"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorAccent"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:text="@string/currentprogress"

@@ -19,5 +19,6 @@
         <attr name="progressEndColor" format="color"/>
         <attr name="progressArgbColor" format="boolean"/>
         <attr name="smallCircleColor" format="color"/>
+        <attr name="smallCircleEnable" format="boolean"/>
     </declare-styleable>
 </resources>

@@ -61,6 +61,9 @@ public class RoundProgressBar extends View {
     //文字颜色是否argb变化
     private boolean progressArgbColor;
 
+    //小圆是否可用
+    private boolean smallCircleEnable;
+
     private int center;
 
     private int textPaintStroke;
@@ -100,6 +103,7 @@ public class RoundProgressBar extends View {
         maxProgress = typedArray.getInt(R.styleable.RoundProgressBar_maxProgress, 100);
         animationDuration = typedArray.getInt(R.styleable.RoundProgressBar_animationDuration, 1000);
 
+
         //设置第一行文字的默认文字
         String defaultTopText = typedArray.getString(R.styleable.RoundProgressBar_topText);
         if (defaultTopText != null) {
@@ -120,6 +124,9 @@ public class RoundProgressBar extends View {
         //控制颜色渐变的开关
         progressArgbColor = typedArray.getBoolean(R.styleable.RoundProgressBar_progressArgbColor, false);
 
+        smallCircleEnable = typedArray.getBoolean(R.styleable.RoundProgressBar_smallCircleEnable, true);
+
+
         typedArray.recycle();
     }
 
@@ -136,7 +143,9 @@ public class RoundProgressBar extends View {
         drawText(canvas);
 
         //第4步，画出白色小圆
-        drawSmallCircle(canvas);
+        if (smallCircleEnable) {
+            drawSmallCircle(canvas);
+        }
     }
 
     private void drawSmallCircle(Canvas canvas) {
@@ -166,7 +175,9 @@ public class RoundProgressBar extends View {
         }
 
         paint.setColor(smallCircleColor);
+
         paint.setStyle(Paint.Style.STROKE);
+
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleThickness / 2 + 1);
 
@@ -237,6 +248,11 @@ public class RoundProgressBar extends View {
         paint.setStrokeWidth(circleColor);
 
         paint.setStyle(Paint.Style.STROKE);
+        if (smallCircleEnable) {
+            paint.setStrokeCap(Paint.Cap.BUTT);
+        } else {
+            paint.setStrokeCap(Paint.Cap.ROUND);
+        }
         paint.setAntiAlias(true);
 
         //设置圆弧宽度
@@ -293,7 +309,7 @@ public class RoundProgressBar extends View {
 
         //原本是半径是等于中心点，但是由于设置画笔宽度的时候，这个宽度会根据当前的半径，往外部和内部各扩展1/2。
         //所以在设置半径是需要减去圆环宽度的一半。
-        //这里没有减去圆环宽度一般是因为想让圆环距离本控件有左右间距，故意为之
+        //这里减去整个圆环厚度是因为想让圆环距离本控件有左右间距，故意为之
         outerFirstCircleRadius = (int) (center - circleThickness);
         //文字不用太大
         textPaintStroke = 1;
@@ -454,6 +470,15 @@ public class RoundProgressBar extends View {
     public void setSmallCircleColor(int smallCircleColor) {
         this.smallCircleColor = smallCircleColor;
         invalidate();
+    }
+
+    /**
+     * 设置小圆是否可用
+     * @param smallCircleEnable 装填
+     */
+    public void setSmallCircleEnable(boolean smallCircleEnable) {
+        this.smallCircleEnable = smallCircleEnable;
+        setAnimation(0, currentProgress);
     }
 
 }

@@ -1,17 +1,15 @@
 package com.xx;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-
 import com.xw.repo.BubbleSeekBar;
 import com.xx.roundprogressbar.PixeUtils;
 import com.xx.roundprogressbar.RoundProgressBar;
 
-public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnProgressChangedListener {
+public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnProgressChangedListener, CompoundButton.OnCheckedChangeListener {
     private RoundProgressBar mRpb;
     private BubbleSeekBar mBsbCurrent;
     private static final int CURRENT = 100;
@@ -19,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnP
     private BubbleSeekBar mBsbMax;
     private CheckBox mCbArgbColor;
     private BubbleSeekBar mBsbCircleThickness;
+    private CheckBox mCbSmallCircle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnP
 
         mRpb = findViewById(R.id.rpb);
         mCbArgbColor = findViewById(R.id.cb_arg_color);
+        mCbSmallCircle = findViewById(R.id.cb_small_circle);
 
         mBsbCurrent = findViewById(R.id.bsb_current);
         mBsbDuration = findViewById(R.id.bsb_duration);
@@ -44,9 +44,7 @@ public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnP
         //设置最大进度
         mRpb.setMaxProgress(100);
 
-
         initListener();
-
     }
 
     private void initListener() {
@@ -55,16 +53,9 @@ public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnP
         mBsbMax.setOnProgressChangedListener(this);
         mBsbCircleThickness.setOnProgressChangedListener(this);
 
-        mCbArgbColor.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mRpb.setProgressArgbColor(true);
-                } else {
-                    mRpb.setProgressArgbColor(false);
-                }
-            }
-        });
+        mCbSmallCircle.setOnCheckedChangeListener(this);
+
+        mCbArgbColor.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -79,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnP
                 mRpb.setCurrentProgress(progressFloat);
                 break;
         }
-
     }
 
     @Override
@@ -94,6 +84,18 @@ public class MainActivity extends AppCompatActivity implements BubbleSeekBar.OnP
                 break;
             case R.id.bsb_circleThickness:
                 mRpb.setCircleThickness(PixeUtils.dip2px(MainActivity.this, progress));
+                break;
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()) {
+            case R.id.cb_arg_color:
+                    mRpb.setProgressArgbColor(isChecked);
+                break;
+            case R.id.cb_small_circle:
+                    mRpb.setSmallCircleEnable(isChecked);
                 break;
         }
     }

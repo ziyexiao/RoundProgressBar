@@ -7,4 +7,5 @@
     <string name="animationduration">animationDuration(动画时长)：(s)</string>
     <string name="progressargbcolor">progressArgbColor(是否有渐变效果)：</string>
     <string name="circlethickness">circleThickness(RoundProgressBar宽度)：(dp)</string>
+    <string name="smallcircleenable">smallCircleEnable(白色小圆是否显示)：</string>
 </resources>
